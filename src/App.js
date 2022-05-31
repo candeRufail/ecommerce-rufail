@@ -1,24 +1,16 @@
-import logo from './logo.svg';
+
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from "./components/navBar";
+import Hero from "./components/hero";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          CoderHouse
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ecommerce de cande rufail.
-        </a>
-      </header>
-    </div>
+    <>
+    <NavBar />
+  
+    <Hero />
+    </>
   );
 }
 
