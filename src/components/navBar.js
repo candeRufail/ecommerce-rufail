@@ -1,4 +1,4 @@
-
+import CartWidget from "./cartWidget";
 export default function NavBar() {
   return (
     <nav class="navbar navbar-expand-lg ">
@@ -22,7 +22,9 @@ export default function NavBar() {
         <li class="nav-item">
           <a class="nav-link" href="#">Contacto</a>
         </li>
+      
       </ul>
+      <CartWidget />
     </div>
   </div>
 </nav>
