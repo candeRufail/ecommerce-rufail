@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ItemListContainer = () => {
+const ItemListContainer = ({saludo}) => {
   return (
     <div className="" style={{maxWidth: "100%"}}>
-        <h1>PROXIMAMENTE CATALOGO DE PRODUCTOS</h1>
+        <h1>{saludo}</h1>
     <iframe src="https://embed.lottiefiles.com/animation/90901"></iframe>
 </div>
   )
