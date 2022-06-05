@@ -1,7 +1,6 @@
-
 import React from 'react'
 
-const CartWidget = () => {
+export default function CartWidget() {
   return (
    // <div><i class="bi bi-cart"></i></div>
    <div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
@@ -10,4 +9,3 @@ const CartWidget = () => {
   )
 }
 
-export default CartWidget
