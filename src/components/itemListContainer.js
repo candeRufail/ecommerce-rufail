@@ -1,13 +1,34 @@
-import React from 'react';
-import ItemCount from '../components/itemCount';
+import { useEffect, useState } from "react";
+import ItemList from "./itemList";
+// import { getFetch } from "../../helpers/getFetch";
 
-export default function ItemListContainer({ saludo, stock, initial, onAdd }) {
+
+
+const ItemListContainer = () => {
+    // const [productos, setProductos] = useState([])
+    //  const [loading, setLoading] = useState(true)   
+   
+    // useEffect(()=>{
+    //     getFetch()// llamada a la api
+    //     .then((resp)=> {
+    //             setProductos(resp)
+    //             setLoading(false)
+    //     })
+    //     .catch(err => console.log(err))
+    //     // .finally(()=> )
+    // }, [])
+
+   
+   
     return (
-        <div className="" style={{ maxWidth: "100%" }}>
-            <h1>{saludo}</h1>
-            <iframe src="https://embed.lottiefiles.com/animation/90901"></iframe>
-            <ItemCount stock="10" />
+        <div>
+             
+                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+                      <ItemList  />                   
+                </div>             
+            
         </div>
     )
 }
 
+export default ItemListContainer
