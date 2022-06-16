@@ -1,58 +1,32 @@
-export default function ItemDetail({detail}) {
-    return (
-        //   <div>
-        //       <div class="card" style="width: 18rem;">
-        //   <img src="/assets/sillon-mostaza.jpg" class="card-img-top" alt="...">
-        //   <div class="card-body">
-        //     <h5 class="card-title">Card title</h5>
-        //     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        //     <a href="#" class="btn btn-primary">Go somewhere</a>
-        //   </div>
-        // </div>
-        //   </div>
+import ItemCount from "./itemCount"
 
-        // <div
-        //     className='col-md-4 p-1'
-        // >
-        //     <div className="card w-100 mt-5" >
-        //         <div className="card-header">
-        //             <p> sillon de pana color mostaza con patas de madera </p>
-        //         </div>
-        //         <div className="card-body">
-        //             <img src="/assets/sillon-mostaza.jpg" alt='' className='w-50' />
-        //         </div>
-        //         <div className="card-footer">
-        //             <button className="btn btn-outline-primary btn-block">
-        //                 Precio
-        //             </button>
-        //         </div>
-        //     </div>
-        // </div>
-        <div
-        className='col-md-4 p-1'
-    >
-        <div className="card w-100 mt-5" >
-            <div className="card-header">
-                <p>{detail.descripcion}</p>
+export default function ItemDetail ({ producto }) {
+    /// estado 
+    const onAdd = (cant) => {
+        console.log(cant)
+        // valor
+    }
+
+    return (
+        <div className="row">
+            <div className="col-md-6 mt-5">
+                <img src={producto.imagen} alt="" className="w-50 m-5" />
             </div>
-            <div className="card-body">
-                <img src={detail.imagen} alt='' className='w-50' />
-               
-            </div>
-            <div className="card-footer">
-                <button className="btn btn-outline-primary btn-block">
-                  {detail.precio}
-                </button>
+            <div className="col-md-6 mt-5">
+                <div className="row mt-5">
+                    <h3>nombre: {producto.nombre}</h3>
+                    <h3>categoría: {producto.categoria}</h3>
+                    <h4>precio: {producto.precio}</h4>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        {/* ternario */}
+                        <ItemCount initial={1} stock={10} onAdd={onAdd} />
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-
-
-
-
-    );
+    )
 }
-
 
 

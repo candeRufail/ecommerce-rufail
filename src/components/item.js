@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { Link } from "react-router-dom";
+
 // COMPONENTE DESTINADO A MOSTRAR INFORMACION BREVE DEL PRODUCTO
 //LA VISTA ES DE TIPO {ID,TITLE, PRICE, PICTUREurl
 //}
@@ -10,16 +13,18 @@ export default function Item({ prod }) {
         >
             <div className="card w-100 mt-5" >
                 <div className="card-header">
-                    {`${prod.nombre} - ${prod.descripcion}`}
+                    {`${prod.nombre} - ${prod.categoria}`}
                 </div>
                 <div className="card-body">
-                    <img src={prod.foto} alt='' className='w-50' />
+                    <img src={prod.imagen} alt='' className='w-50' />
                     {prod.stock}
                 </div>
                 <div className="card-footer">
-                    <button className="btn btn-outline-primary btn-block">
-                        detalle del producto
-                    </button>
+                <Link to={`/detalle/${prod.id}`} >
+                        <button className="btn btn-outline-primary btn-block">
+                            detalle del producto
+                        </button>   
+                    </Link> 
                 </div>
             </div>
         </div>
@@ -28,7 +33,5 @@ export default function Item({ prod }) {
 
     );
 }
-
-
 
 
