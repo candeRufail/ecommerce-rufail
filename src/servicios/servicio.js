@@ -35,7 +35,7 @@ export const getFetch = (id) =>{
            } else {
                resolve(productos)          
            }
-       },2000)    
+       },1000)    
        // reject('no qtengo nada para')    
    })
 }  
@@ -50,7 +50,7 @@ export const getFetchOne = () =>{
    return new Promise( (resolve, reject)=>{   
        setTimeout(()=>{
            resolve(productos)   
-       },2000)    
+       },1000)    
        // reject('no qtengo nada para')    
    })
 }  

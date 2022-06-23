@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
-const ItemCount = ({initial, stock, onAdd}) => {
+export default function ItemCount  ({initial, stock, onAdd})  {
     const [count, setCount] = useState(initial)
 
     function suma() {
@@ -20,12 +21,20 @@ const ItemCount = ({initial, stock, onAdd}) => {
 
     return (
         <>
-            <div>{count}</div>
-            <button onClick={suma}>sumar</button> 
-            <button onClick={resta}>restar</button>
-            <button onClick={agregar}>agregar</button>
+            {/* <center> */}
+                <div className="container m-5 w-25 border rounded border-3 border-primary" style={{ textAlign: 'center'  }}>                   
+                    <span className="alert alert-success w-100" >
+                        { count }
+                    </span>                   
+                    <br />
+                    <div className="mt-6">
+                        <button onClick={suma} className='btn ' > + </button> 
+                        <button onClick={resta} className='btn ' > - </button><br/>
+                    </div>
+                    <Link to='/cart' ><button onClick={agregar} className='btn '>agregar</button></Link> 
+                </div>
+           
         </>
     )
 }
 
-export default ItemCount

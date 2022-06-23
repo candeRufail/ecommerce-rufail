@@ -8,6 +8,9 @@ import ItemCount from './components/itemCount';
 import Hero from './components/hero';
 import ItemDetailContainer from './components/itemDetailContainer';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import {  CartContextProvider } from './contexts/cartContext';
+
+
 function App() {
   const onAdd = (cant) => {
     console.log(cant)
@@ -15,12 +18,13 @@ function App() {
 
   return (
     <>
+     <CartContextProvider>
       <BrowserRouter>
         <NavBar />
-        <Hero />
+        {/* <Hero /> */}
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
-          <Route path="/categoria/categoriaId" element={<ItemListContainer />} />
+          <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
           <Route path="/detalle/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<CartWidget />} />
           <Route path='*' element={<Navigate to='/' />} />
@@ -30,6 +34,7 @@ function App() {
           {/* <ItemDetailContainer /> */}
         </Routes>
       </BrowserRouter>
+      </CartContextProvider>
     </>
   );
 }
