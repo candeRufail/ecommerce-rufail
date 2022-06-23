@@ -31,7 +31,7 @@ export default function ItemCount  ({initial, stock, onAdd})  {
                         <button onClick={suma} className='btn ' > + </button> 
                         <button onClick={resta} className='btn ' > - </button><br/>
                     </div>
-                    <Link to='/cart' ><button onClick={agregar} className='btn '>agregar</button></Link> 
+                  <button onClick={agregar} className='btn '>agregar</button>
                 </div>
            
         </>
