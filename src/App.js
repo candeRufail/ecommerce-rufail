@@ -8,7 +8,7 @@ import ItemCount from './components/itemCount';
 import Hero from './components/hero';
 import ItemDetailContainer from './components/itemDetailContainer';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
-import {  CartContextProvider } from './contexts/cartContext';
+import CartContextProvider from "./contexts/cartContext"
 
 
 function App() {

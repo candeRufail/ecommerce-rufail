@@ -1,34 +1,47 @@
-import { createContext, useState, useContext } from 'react' 
+import { createContext, useState } from "react";
 
-const CartContext = createContext([])
+export const CartContext = createContext([]);
 
-export const useCartContext = () => useContext(CartContext)
+const CartContextProvider = ({ children }) => {
+  const [cartList, setCartList] = useState([]);
 
-
-export const CartContextProvider = ({ children }) => {
-    // estados y funciones
-    const [cart, setCart] = useState([])
-
-    const addToCart = (item) => {
-        setCart([
-            ...cart,
-            item
-        ])
+  const AddToCart = (item, cantidad) => {
+   
+    if (IsInCart(item.id)) {
+      alert("El producto ya se encuentra en el carrito");
+    } else {
+      setCartList([...cartList, { item, cantidad }]);
+      alert("Se agrego el producto correctamente");
     }
+  };
 
-    const vaciarCarrito = () => {
-        setCart([])
-    }
+  const DelItem = (id) => {
+    const items = cartList.filter((product)=> product.item.id !== id)
+    setCartList(items)
+    return
+  }
 
-    return (
-        <CartContext.Provider 
-            value={{
-                cart,
-                addToCart,
-                vaciarCarrito
-            }}
-        >
-            {children}
-        </CartContext.Provider>
-    )
-}
+  const IconCart = () => {
+    return cartList.reduce((acum, i)=> acum + i.cantidad, 0)
+  }
+
+  const PriceTotal = () => {
+    return cartList.reduce((acum, i) => acum + i.cantidad * i.item.price, 0)
+  }
+
+  const EmptyCart = () =>{
+    return setCartList([])
+  }
+
+  const IsInCart = (id) => {
+    return cartList && cartList.some((i) => i.item.id === id);
+  };
+
+  return (
+    <CartContext.Provider value={{ AddToCart, cartList, EmptyCart, DelItem, PriceTotal, IconCart }}>
+      {children}
+    </CartContext.Provider>
+  );
+};
+
+export default CartContextProvider;
