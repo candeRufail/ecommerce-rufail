@@ -1,7 +1,8 @@
 import { useState } from "react"
+import { TextComponent } from "./textComponent"
 
-
-export default function ItemCount  ({initial, stock, onAdd})  {
+export default function ItemCount  ({initial,stock,  onAdd, producto})  {
+  
     const [count, setCount] = useState(initial)
 
     function suma() {
@@ -26,6 +27,9 @@ export default function ItemCount  ({initial, stock, onAdd})  {
                     <span className="alert alert-success w-100" >
                         { count }
                     </span>                   
+                    <span>
+                        <TextComponent>{producto.stock} </TextComponent>
+                    </span>
                     <br />
                     <div className="mt-6">
                         <button onClick={suma} className='btn ' > + </button> 

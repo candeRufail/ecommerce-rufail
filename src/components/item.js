@@ -17,7 +17,7 @@ export default function Item({ prod }) {
                 </div>
                 <div className="card-body">
                     <img src={prod.imagen} alt='' className='w-50' />
-                    {prod.stock}
+                    {/* {prod.stock} */}
                 </div>
                 <div className="card-footer">
                 <Link to={`/detalle/${prod.id}`} >

@@ -7,6 +7,7 @@
               imagen: '/assets/silla-valenziana.jpg',
               descripcion: 'silla de madera cedro con tapizado',
               precio: '$5.000',
+              stock: 20
             },
             {
               id: '1',
@@ -15,6 +16,7 @@
               imagen: '/assets/mesa-de-madera.jpg',
               descripcion: 'mesa de roble con patas de madera cedro',
               precio: '$9.000',
+              stock: 15
             },
             {
               id: '2',
@@ -23,6 +25,7 @@
               imagen: '/assets/sillon-mostaza.jpg',
               descripcion: 'sillon de pana con patas de madera',
               precio: '$15.000',
+              stock: 30
             },
           ];
 

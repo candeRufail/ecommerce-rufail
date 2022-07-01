@@ -14,18 +14,7 @@ export default function ItemDetail({ producto }) {
         AddToCart(producto, cantidad);
 
     };
-    // const { AddToCart } = useContext(CartContext);
-
-
-    // // const [ estado, setEstado ] = useState()
-
-    // const onAdd = (cant) => {
-    //     console.log(cant)
-    //     //setEstado(cant)
-    //     addToCart({ ...producto, cantidad: cant })
-    // }
-
-    // console.log(cart)
+    
 
     return (
         <div className="row">
@@ -41,7 +30,7 @@ export default function ItemDetail({ producto }) {
                 <div className="row">
                     <div className="col">
                        
-                    <ItemCount  initial={1} stock={10} onAdd={onAdd} />
+                    <ItemCount  initial={1}  onAdd={onAdd} stock={producto.stock} producto={producto} />
                     
                     </div>
                 </div>
